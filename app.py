@@ -150,11 +150,11 @@ model = load_model()
 expected_columns = ['Gear_Type', 'Origin', 'Options', 'Type', 'Make', 'Region', 'Year', 'Engine_Size', 'Mileage']
 
 # --- MODE SELECTION (Bukan Sidebar) ---
-mode = st.radio("Pilih Mode Input:", ["🚗 🇮 🇳 🇵 🇺 🇹   🇮 🇳 🇫 🇴 🇷 🇲 🇦 🇸 🇮   🇲 🇴 🇧 🇮 🇱", "📄 🇺 🇵 🇱 🇴 🇦 🇩   🇫 🇮 🇱 🇪   🇧 🇦 🇹 🇨 🇭"], label_visibility="visible")
+mode = st.radio("Pilih Mode Input:", ["🚗 Input Informasi Mobil", "📄 Upload File (Batch)"], label_visibility="visible")
 st.markdown("<br>", unsafe_allow_html=True)
 
 # --- INPUT SATU MOBIL ---
-if mode == "🚗 🇮 🇳 🇵 🇺 🇹   🇮 🇳 🇫 🇴 🇷 🇲 🇦 🇸 🇮   🇲 🇴 🇧 🇮 🇱":
+if mode == "🚗 Input Informasi Mobil":
     st.subheader("📋 Masukkan Informasi Mobil", divider="rainbow")
 
     def get_user_input(df):
@@ -203,7 +203,7 @@ if mode == "🚗 🇮 🇳 🇵 🇺 🇹   🇮 🇳 🇫 🇴 🇷 🇲 🇦 
             st.error(f"Gagal melakukan prediksi: {e}")
 
 # --- BATCH UPLOAD ---
-elif mode == "📄 🇺 🇵 🇱 🇴 🇦 🇩   🇫 🇮 🇱 🇪   🇧 🇦 🇹 🇨 🇭":
+elif mode == "📄 Upload File (Batch)":
     st.markdown("""
     <h3 style='display: flex; align-items: center; font-weight: bold;'>
         <img src='https://img.icons8.com/emoji/24/clipboard-emoji.png' style='margin-right: 8px;'/>
